@@ -1,6 +1,6 @@
 ---
 title: "Alcohol vs Seat choice"
-author: "Your Name"
+author: "Amee Rodrick"
 date: "Fall 2020"
 output: html_document
 ---
@@ -28,6 +28,8 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
+it appears as though the back row consumes the most alcohol during the game and the front row consumes the least. the middle row's alcohol comsumption is between the other results.
+
   
 ### get fancy  
 
@@ -37,8 +39,18 @@ basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='e
 
 ## Numerical Summarys 
 
+Based on this chart, we see that the back row acerage of alcohol drinks is an average of 9.8 and the middle row drink average is 3.2 and the front row is 1.8.
+
 ## Inferential Tests
 
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
 ## Conclusions
+
+Based on the charts above the back row is drinking nearly 10 times the amount of drinks compared to the front row and approxiamately 3 times as many drinks than the middle row. Based on the inferential graphs we can conclude that the middle and front row have a relationship consisting of nearly the same and the back row shares no relationship with any of the results
+
+
 
 
